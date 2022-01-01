@@ -5,10 +5,22 @@
     --shadow: 0 0 20px rgba(0, 0, 0, 0.281);
     --search-margin:4vh;
     --raduis:4px;
-    --dark:#202C37;
-    --light-dark:#2B3945;
     --dark-white:rgba(238, 238, 238, 0.794);
 }
+
+
+*::-webkit-scrollbar {
+    width: 0.4vw;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--white);
+  }
+
+  *::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+    background-color: var(--black);
+  }
 
 .dark{
     --black:#fff;
@@ -203,7 +215,7 @@ main{
         width: 100%;
     } 
     .flag_container{
-        padding-top: 16vh !important;
+        padding-top: 15vh !important;
         place-items:start center;
         padding-left: 10px;
     }
