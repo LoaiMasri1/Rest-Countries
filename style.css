@@ -3,6 +3,10 @@
     --black:#000;
     --white:#fff;
     --shadow: 0 0 20px rgba(0, 0, 0, 0.281);
+    --search-margin:4vh;
+    --raduis:4px;
+    --dark:#202C37;
+    --light-dark:#2B3945;
 }
 
 *,*::after,*::before{
@@ -16,6 +20,7 @@ body{
     font-size: 16px;
 }
 header{
+    position: relative;
     background-color: var(--white);
     height: 7vh;
     box-shadow: var(--shadow);
@@ -52,5 +57,52 @@ header nav{
 .dark_mode p{
     font-size: 0.8em;
     font-weight: 600;
+}
+
+main{
+    padding-top: var(--search-margin);
+    height: 93vh;
+    background-color: var(--white);
+}
+
+.search_area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+}
+.search_box{
+    margin-left: var(--nav-margin);
+    display: flex;
+    height: 50%;
+    background-color:var(--white);
+    padding:25px 10px;
+    border-radius: var(--raduis);
+    justify-content: center;
+    align-items: center;
+}
+.search_box input{
+    outline: none;
+    background-color: var(--white);
+    border: 0;
+    height: 30px;
+    width: 400px;
+    margin-left: 1vw;
+}
+
+.search_box svg{
+    color: #858599;
+    margin-left: 1.5vw;
+    height: 15px;
+}
+
+.search_area select{
+    background-color: var(--white);
+    border: 1px var(--black) solid;
+    border-radius: var(--raduis);
+    padding-left: 1vw;
+    height: 50px;
+    width: 150px;
+    margin-right: var(--nav-margin);
 }
 
