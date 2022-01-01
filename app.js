@@ -88,3 +88,24 @@ function darkMode() {
   document.body.classList.toggle("dark");
   label.textContent = "Light Mode";
 }
+
+
+//Get the button:
+topBtn = document.getElementById("toTop");
+topBtn.addEventListener('click',topFunction);
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+    topBtn.style.bottom = "30px";
+
+  } else {
+    topBtn.style.bottom = "-100px";
+
+  }
+}
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}

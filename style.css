@@ -1,3 +1,11 @@
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: var(--black);
+   }
+
 :root{
     --nav-margin:10vw;
     --black:#000;
@@ -8,16 +16,15 @@
     --dark-white:rgba(238, 238, 238, 0.794);
 }
 
-
 *::-webkit-scrollbar {
     width: 0.4vw;
   }
 
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: var(--white);
   }
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
       border-radius: 10px;
     background-color: var(--black);
   }
@@ -28,12 +35,8 @@
     --dark-white:#202C37;
 }
 
-*,*::after,*::before{
- padding: 0;
- margin: 0;
- box-sizing: border-box;
- font-family: sans-serif;
- color: var(--black);
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -177,6 +180,32 @@ main{
     margin-top: 10px;
 }
 
+#toTop {
+    height: 50px;
+    width:50px;
+    color: var(--black);
+    background-color: var(--white);
+    display: block; 
+    position: fixed;
+    bottom: -100px;
+    right: 30px;
+    z-index: 99;
+    border: 1px solid var(--black);
+    outline: none; 
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.3em;
+    transition: 0.5s ease;
+  }
+  
+  #toTop:hover {
+    border: 1px solid var(--white);
+    color: var(--white);
+    background-color: var(--black);
+  }
+
+
+
 
 @media (max-width:768px) {
     .flag_container{
@@ -199,8 +228,6 @@ main{
         margin-top: 15px;
         margin-left:auto;
     }
-
-
 }
 
 @media (max-width:568px) {
