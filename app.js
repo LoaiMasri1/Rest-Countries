@@ -84,7 +84,11 @@ function filter() {
 
 function darkMode() {
   document.body.classList.toggle("dark")
-  label.textContent = "Light Mode"
+  if(document.body.classList.contains('dark')){
+    label.textContent = "Light Mode"
+  }else{
+    label.textContent = "Dark Mode"
+  }
 }
 
 function hitEnter(event) {
