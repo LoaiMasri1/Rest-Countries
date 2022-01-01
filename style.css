@@ -1,0 +1,56 @@
+:root{
+    --nav-margin:10vw;
+    --black:#000;
+    --white:#fff;
+    --shadow: 0 0 20px rgba(0, 0, 0, 0.281);
+}
+
+*,*::after,*::before{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: sans-serif;
+}
+
+body{
+    font-size: 16px;
+}
+header{
+    background-color: var(--white);
+    height: 7vh;
+    box-shadow: var(--shadow);
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+.logo{
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--black);
+    font-size: 1.5em;
+    margin-left: var(--nav-margin);
+}
+.dark_mode{
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   margin-right: var(--nav-margin);
+}
+
+.dark_mode svg{
+    height: 20px;
+    margin-right: calc(var(--nav-margin) - 6vw);
+    transform: rotate(-20deg);
+    cursor: pointer;
+}
+.dark_mode p{
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
