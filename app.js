@@ -2,34 +2,15 @@ let btn = document.querySelector("#toggle_btn");
 let label = document.querySelector(".dark_mode p");
 let container = document.querySelector(".flag_container");
 let textBox = document.querySelector("#text");
-let select=document.querySelectorAll('#select');
-btn.addEventListener("click", darkMode);
+let select = document.querySelectorAll("#select");
+topBtn = document.getElementById("toTop");
+
 window.addEventListener("load", init);
-
-
-select.forEach(option => {
-
-    option.addEventListener('change',()=>{
-        if(option.value==='All'){
-            init()
-        }else{
-            let value=option.value;
-            search('region',value)
-        }
-    })
-});
-
-
-textBox.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    let value = textBox.value;
-    textBox.value=''
-    search('name',value);
-    event.preventDefault();
-
-  }
-});
-
+window.addEventListener("load", filter);
+window.addEventListener("scroll", scrollFunction);
+btn.addEventListener("click", darkMode);
+textBox.addEventListener("keyup", hitEnter);
+topBtn.addEventListener("click", topFunction);
 
 async function init() {
   try {
@@ -53,11 +34,11 @@ async function init() {
       container.appendChild(div);
     });
   } catch (error) {
-      alert(error)
+    alert(error);
   }
 }
 
-async function search(name,CITY) {
+async function search(name, CITY) {
   try {
     let curl = `https://restcountries.com/v2/${name}/${CITY}`;
     let response = await fetch(curl);
@@ -83,25 +64,41 @@ async function search(name,CITY) {
   }
 }
 
+function filter() {
+  select.forEach((option) => {
+    option.addEventListener("change", () => {
+      if (option.value === "All") {
+        init();
+      } else {
+        let value = option.value;
+        search("region", value);
+      }
+    });
+  });
+}
 
 function darkMode() {
   document.body.classList.toggle("dark");
   label.textContent = "Light Mode";
 }
 
-
-//Get the button:
-topBtn = document.getElementById("toTop");
-topBtn.addEventListener('click',topFunction);
-window.onscroll = function() {scrollFunction()};
+function hitEnter(event) {
+  if (event.keyCode === 13) {
+    let value = textBox.value;
+    textBox.value = "";
+    search("name", value);
+    event.preventDefault();
+  }
+}
 
 function scrollFunction() {
-  if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+  if (
+    document.body.scrollTop > 500 ||
+    document.documentElement.scrollTop > 500
+  ) {
     topBtn.style.bottom = "30px";
-
   } else {
     topBtn.style.bottom = "-100px";
-
   }
 }
 

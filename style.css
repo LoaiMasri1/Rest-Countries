@@ -204,9 +204,6 @@ main{
     background-color: var(--black);
   }
 
-
-
-
 @media (max-width:768px) {
     .flag_container{
         padding-top: 10vh !important;
