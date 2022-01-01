@@ -137,7 +137,7 @@ main{
     border-radius: var(--raduis);
     background-color: var(--white);
     box-shadow: var(--shadow);
-    width: fit-content;
+    width: 320px;
     height: fit-content;
     overflow: hidden;
 }
