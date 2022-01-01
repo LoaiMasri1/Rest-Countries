@@ -7,6 +7,7 @@
     --raduis:4px;
     --dark:#202C37;
     --light-dark:#2B3945;
+    --dark-white:rgba(238, 238, 238, 0.794);
 }
 
 *,*::after,*::before{
@@ -20,6 +21,7 @@ body{
     font-size: 16px;
 }
 header{
+    width: 100%;
     position: relative;
     background-color: var(--white);
     height: 7vh;
@@ -62,10 +64,11 @@ header nav{
 main{
     padding-top: var(--search-margin);
     height: 93vh;
-    background-color: var(--white);
+    background-color: var(--dark-white);
 }
 
 .search_area{
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,5 +107,47 @@ main{
     height: 50px;
     width: 150px;
     margin-right: var(--nav-margin);
+}
+
+.flag_container{
+    padding: 50px 0 50px 50px;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(20em, 1fr) );
+    row-gap: 40px;
+    width: 100%;
+    min-height: calc(100% - 7vh);
+}
+@media (max-width:768px) {
+.flag_container{
+    place-items:center;
+}
+}
+
+.card{
+    border-radius: var(--raduis);
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+}
+
+.card .card_img{
+    width: 320px;
+    height: 160px;
+}
+
+.card_img img{
+    width: 100%;
+}
+
+.card_content{
+    padding: 20px;
+}
+
+.population,.region,.capital{
+    font-weight: 400;
+    display: inline-block;
+    margin-top: 10px;
 }
 
