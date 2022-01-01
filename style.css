@@ -77,7 +77,7 @@ header nav{
 
 main{
     padding-top: var(--search-margin);
-    height: 93vh;
+    min-height: 93vh;
     background-color: var(--dark-white);
 }
 
@@ -127,7 +127,7 @@ main{
 .flag_container{
     padding: 50px 0 50px 50px;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(20em, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(25em, 1fr) );
     row-gap: 40px;
     width: 100%;
     min-height: calc(100% - 7vh);
@@ -148,6 +148,7 @@ main{
 }
 
 .card_img img{
+    height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -158,14 +159,17 @@ main{
 }
 
 .population,.region,.capital{
-    font-weight: 400;
+
+    font-weight: 700;
     display: inline-block;
     margin-top: 10px;
 }
 
+
 @media (max-width:768px) {
     .flag_container{
         padding-top: 10vh !important;
+        place-items: start center;
     }
     body{
         font-size: 14px;
@@ -191,18 +195,13 @@ main{
     body{
         font-size: 12px !important;
     }
+    .search_box svg{
+        height: 2em;
+        margin-right: 2em;
+    }
     div.card{
-        width: 80%;
-    } 
-    .card .card_img{
-        width: auto;
-    }
-
-    img{
         width: 100%;
-        height: 90%;
-    }
-
+    } 
     .flag_container{
         padding-top: 16vh !important;
         place-items:start center;
