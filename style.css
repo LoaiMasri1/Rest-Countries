@@ -124,6 +124,7 @@ main{
 }
 
 .search_box svg{
+    cursor: pointer;
     color: #858599;
     margin-left: 1.5vw;
     height: 15px;
